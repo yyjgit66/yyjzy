@@ -26,24 +26,28 @@ public class GenerateSql {
         String packageName = valueType.getClass().getName();
         int lastIndex = packageName.lastIndexOf(".");
         String className = packageName.substring(lastIndex + 1);
-        String  tableName = getField(className);
+        char[] chars = className.toCharArray();
+        chars[0] += 32;
+        String  tableName = getField(String.valueOf(chars));
         StringBuilder insertName = new StringBuilder();
-            StringBuilder insertValue = new StringBuilder();
-            for (Field declaredField : declaredFields) {
-                declaredField.setAccessible(true);
-                Object value = declaredField.get(valueType);
-                if(null!=value && !value.equals("")){
-                    insertValue.append("'"+value+"'");
-                    insertValue.append(",");
-                    String name = declaredField.getName();
-                      name = getField(name);
+        StringBuilder insertValue = new StringBuilder();
+        for (Field declaredField : declaredFields) {
+            declaredField.setAccessible(true);
+            Object value = declaredField.get(valueType);
+            if(null!=value && !value.equals("")){
+                insertValue.append("'"+value+"'");
+                insertValue.append(",");
+                String name = declaredField.getName();
+                  name = getField(name);
 
-                    insertName.append(name);
-                    insertName.append(",");
-                }
-
+                insertName.append(name);
+                insertName.append(",");
+            }
+         }
+        if(!"".equals(insertName.toString()) && !"".equals(insertValue.toString())){
             return  "insert into "+ tableName + " ("+ insertName.substring(0,insertName.length()-1)+")"+ " values ("+insertValue.substring(0,insertValue.length()-1)+");";
         }
+
         return null;
     }
 
