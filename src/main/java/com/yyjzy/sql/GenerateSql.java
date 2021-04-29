@@ -1,6 +1,6 @@
 package com.yyjzy.sql;
 
-import com.yyjzy.Util;
+import com.yyjzy.utils.Util;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,5 +1,8 @@
-package com.yyjzy;
+package com.yyjzy.utils;
 
+/**
+ * @author yyj
+ */
 public class Util {
 
     public static String getCapital(String str){
