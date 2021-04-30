@@ -3,7 +3,7 @@ package com.yyjzy.utils;
 /**
  * @author yyj
  */
-public class Util {
+public class YyjUtil {
 
     public static String getCapital(String str){
         // 转为char数组
