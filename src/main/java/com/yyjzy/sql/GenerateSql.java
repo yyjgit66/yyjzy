@@ -158,7 +158,7 @@ public class GenerateSql {
                     if(i==0){
                         fields+=value+",";
                     }else{
-                        values+=value+",";
+                        values+="'"+value+"',";
                     }
                 }
                 if(!"".equals(fields)&&!"".equals(values)){
@@ -187,6 +187,12 @@ public class GenerateSql {
             return "";
         }
         if (cell.getCellType() == CellType.NUMERIC) {
+            String number = String.valueOf(cell.getNumericCellValue());
+            String reg = "\\d+(\\.[0]?)?";
+            boolean matches = number.matches(reg);
+            if(matches){
+                return String.valueOf((long)cell.getNumericCellValue());
+            }
             return String.valueOf(cell.getNumericCellValue());
         } else if (cell.getCellType() == CellType.BOOLEAN) {
             return String.valueOf(cell.getBooleanCellValue());
