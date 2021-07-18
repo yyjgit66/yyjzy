@@ -11,11 +11,11 @@
 
     <groupId>com.yyjzy</groupId>
     <artifactId>yyjzy</artifactId>
-    <version>1.0.0.release</version>
+    <version>1.1.2.RELEASE</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>The test uploads the jar to the maven central repository</description>
+    <description>General software development tools</description>
     <url>https://github.com/yyjgit66/yyjzy</url>
 
 
