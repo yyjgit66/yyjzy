@@ -51,7 +51,6 @@ public class EasyDate {
 
 
     /**
-     * 
      * 时间转字符串
      * @param date
      * @return
