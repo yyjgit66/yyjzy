@@ -26,6 +26,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 <!--        <maven.deploy.skip>true</maven.deploy.skip>-->
+        <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable><!-- 解决OSX找不到javadoc问题 -->
+
     </properties>
 
     <dependencies>
