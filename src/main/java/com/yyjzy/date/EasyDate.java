@@ -2,6 +2,7 @@ package com.yyjzy.date;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -30,9 +31,9 @@ public class EasyDate {
      * @param date
      * @return
      */
-    public static LocalDate stringToDateTime(String date){
+    public static LocalDateTime stringToDateTime(String date){
         if(null==date || date.length()==0) return null;
-        LocalDate parse = LocalDate.parse(date, dateTimeFormatter);
+        LocalDateTime parse = LocalDateTime.parse(date, dateTimeFormatter);
         return parse;
     }
 
@@ -55,7 +56,7 @@ public class EasyDate {
      * @param date
      * @return
      */
-    public static String dateTimeToString(LocalDate date){
+    public static String dateTimeToString(LocalDateTime date){
         if(null==date)return null;
         String format = dateTimeFormatter.format(date);
         return format;
