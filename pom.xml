@@ -11,7 +11,7 @@
 
     <groupId>com.yyjzy</groupId>
     <artifactId>yyjzy</artifactId>
-    <version>1.1.2.RELEASE</version>
+    <version>2.0.1.RELEASE</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -26,9 +26,26 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 <!--        <maven.deploy.skip>true</maven.deploy.skip>-->
+        <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable><!-- 解决OSX找不到javadoc问题 -->
+
     </properties>
 
     <dependencies>
+<!--      <dependency>-->
+<!--          <groupId>mysql</groupId>-->
+<!--          <artifactId>mysql-connector-java</artifactId>-->
+<!--          <version>8.0.18</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.11</version>
+        </dependency>
+        <dependency>
+            <groupId>aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.5.3</version>
+        </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -52,6 +69,11 @@
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.13</version>
         </dependency>
     </dependencies>
     <!-- 许可证信息 -->
